@@ -1,0 +1,27 @@
+Trường hợp đặt ra là trong class test của chúng ta có rất nhiều biến global
+và chúng ta phải gán hoặc hủy giá trị này sau mỗi lần chạy test, nếu 
+mỗi testcase đều có những câu lệnh gán và hủy giống nhau thì không ổn. 
+
+Jest cung cấp các phương thức để xử lý vấn đề này 
+
+  1. beforeEach():
+
+    Chạy trước mỗi method test. Sử dụng khi muốn khởi tạo biến, mở kết nối file,... chuẩn bị môi trường để test
+
+  2. afterEach()
+
+    Chạy sau mỗi method test. Sử dụng để hủy các biến
+
+Trong một số trường hợp, chúng ta chỉ cần thiết lập một lập ở đầu mỗi class test hoặc sau class test
+
+  3. beforeAll()
+
+  4. afterAll()
+
+
+Mặc định, before và after được sử dụng đối với tất cả các trường hợp test trong file. 
+Đối với trường hợp chúng ta chỉ muốn thiết lập cho một nhóm các trường hợp test 
+thì ta có thể sử dụng describe để xử lý.
+
+Khi các trường hợp test đặt trong describe block, 2 hàm beforeAll và afterAll sẽ chỉ
+apply đối với các trường hợp nằm ngoài describe block 
