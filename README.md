@@ -16,4 +16,4 @@
 
 #### Connect us via email: nvtien1602.forwork@gmail.com
 
-### Copyright $#169; 2022 Team SWT301 FALL 2022
+#### Copyright &#169; 2022 Team SWT301 FALL 2022
