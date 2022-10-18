@@ -1,5 +1,5 @@
 ## Testing JS data structure using JEST
-### In this demo, we wil use a basic blockchain data structure 
+### In this demo, we will use a basic blockchain data structure 
 First of all, you can simply understand that blockchain is just a linked list, which contains multiple blocks. Each block has its own hash code and connect to the previous block via that one's hash code.
 *(See image below)*
 ![Blockchain-illustration](../../images/blockchain-image.jpg)
