@@ -100,7 +100,138 @@ You will find in this session:
 
 ## Testing React using JEST framework
 
+## Setup
 
+### Setup with Create-React-App
+
+If you are new to React, we recommend using Create React App. It is ready to use and ships with Jest! You will only need to add react-test-renderer for rendering snapshots.
+
+just install react-test-rerender
+
+```sh
+npm install --save-dev react-test-renderer
+yarn add --dev react-test-renderer
+```
+
+### Setup without Create-React-App
+
+If you have an existing application you'll need to install a few packages to make everything work well together. We are using the babel-jest package and the react babel preset to transform our code inside of the test environment. Also see using babel.
+
+Run
+
+```sh
+npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer
+yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer
+```
+
+Your [package.json]() should look something like this (where <current-version> is the actual latest version number for the package). Please add the scripts and jest configuration entries:
+
+```
+{
+  "dependencies": {
+    "react": "<current-version>",
+    "react-dom": "<current-version>"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "<current-version>",
+    "@babel/preset-react": "<current-version>",
+    "babel-jest": "<current-version>",
+    "jest": "<current-version>",
+    "react-test-renderer": "<current-version>"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+
+```
+babel.config.js
+module.exports = {
+  presets: [
+    '@babel/preset-env',
+    ['@babel/preset-react', {runtime: 'automatic'}],
+  ],
+};
+```
+
+## Pratice: clone my repo [hear](#)
+
+## Snapshot Testing
+
+## DOM Testing:
+
+### Queries
+
+- [ByRole](https://testing-library.com/docs/queries/byrole)
+- [ByText](https://testing-library.com/docs/queries/bytext)
+- [ByTestId](https://testing-library.com/docs/queries/bytestid)
+- ...
+  ![](https://res.cloudinary.com/sangtran127/image/upload/v1666128977/amp0raiijelsrtkpzp6u.png)
+
+# CI with Github Pages
+
+1. install gh-pages
+   `npm i --save gh-pages `
+2. open package.json, add "homepage" field
+   `"homepage": "https://myusername.github.io/my-app"`
+3. Add the following scripts in your package.json:
+   `"predeploy": "npm run build", "deploy": "gh-pages -d build"`
+4. Go to the [Personal access tokens area](https://github.com/settings/tokens) in the Developer settings of your GitHub profile and click Generate new token.
+   Fill up a note (What's this token for?) and in the repo scope, select only the first 4 options.
+   ![](https://res.cloudinary.com/practicaldev/image/fetch/s--ExdPulq9--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/lhimosexokwen7vm7qlq.png)
+5. Type a name for your secret in the Name input box, like [ACTIONS_DEPLOY_ACCESS_TOKEN]().
+   ![](https://res.cloudinary.com/practicaldev/image/fetch/s--0VSHQzxe--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9tnsdxq4u5wovvf8fm32.png)
+6. Go to GitHub Actions add some CI
+
+```node.js.yml
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run the tests and generate coverage report
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          npm run deploy
+        env:
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
+
+```
 
 #### Connect us via email: nvtien1602.forwork@gmail.com
 
