@@ -98,16 +98,15 @@ To test this function, we use Jest. We create random string and compare result o
 const Hashing = require("../source/algorithm/Hashing");
 const BruteForce = require("../source/algorithm/BruteForce");
 const generateRandomString = require("../source/algorithm/GenerateRandomString");
-test("properly adds two number", () => {
-    for (let i = 0; i < 10; i++) {
-        var stringA = generateRandomString(Math.floor(Math.random() * 1) + 1);
-        var stringB = generateRandomString(Math.floor(Math.random() * 15) + 10);
-        expect(Hashing(stringA, stringB)).toStrictEqual(
-            BruteForce(stringA, stringB)
-        );
-    }
-    // console.log(Hashing(stringA, stringB) + " " + BruteForce(stringA, stringB))
-    // console.log(stringA + " " + stringB)
+test("Add exactly 2 strings A and B to find substring A in B", () => {
+        var stringA = "aa";
+        var stringB = "aaabaa"
+        expect(BruteForce(stringA, stringB)).toStrictEqual([1, 2, 5]));
+});
+test("Add exactly 2 strings A and B to find substring A in B", () => {
+        var stringA = "aa";
+        var stringB = "aaabaa"
+        expect(Hashing(stringA, stringB)).toStrictEqual([1, 2, 5]));
 });
 ```
 Run test
