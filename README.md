@@ -7,7 +7,7 @@ You will find in this session:
     1. Using Brute Force algorithm to create test case and correct answer
     2. Using test case to test Hash algorithm
     3. See the test result
-#### View more explanation and details code in [algorithm.md](https://github.com/viettien1602/swt301-testing-with-jest/blob/main/testing-js/readme-details/data-structure.md](https://github.com/viettien1602/swt301-testing-with-jest/blob/main/testing-js/readme-details/algorithm.md)
+#### View more explanation and details code in [algorithm.md](https://github.com/viettien1602/swt301-testing-with-jest/blob/main/testing-js/readme-details/algorithm.md)
 
 ## Testing JS data structure (basic blockchain implementation) using JEST framework
 You will find in this session:
