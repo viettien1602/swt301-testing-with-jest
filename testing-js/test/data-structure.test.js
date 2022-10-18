@@ -19,7 +19,7 @@ describe('Add a new block to the chain', () => {
 
     it('A new block added must have prevHash matching the hash of last block of blockchain', () => {
         const addedBlock = blockChain.getLastBlock()
-        // expect(addedBlock.prevHash).toBe(lastBlock.hash)
+        // expect(addedBlock.prevHash).toBe(lastBlock.hash) --the same as toEqual()
         expect(addedBlock.prevHash).toEqual(lastBlock.hash)
     })
 
@@ -34,13 +34,13 @@ describe('Add a new block to the chain', () => {
         expect(addedBlock.data).toEqual(testData)
         expect(addedBlock.data).toMatchObject({amount: 200})
     })
-    
 })
 
 describe('Changing data of a block of blockchain', () => {
     let block1 = blockChain.chain[1]
     it('Not changing anything, should return valid status', () => {
         expect(blockChain.isValid()).toBeTruthy()
+        // expect(blockChain.isValid()).not.toBeFalsy() --the same as above method
     })
 
     it('Changing data of block 1 only, should return invalid status', () => {

@@ -35,11 +35,7 @@ class BlockChain {
     addBlock(data) {
         const lastBlock = this.getLastBlock();
         const newBlock = new Block(lastBlock.hash, data)
-        // console.log('Start mining ...')
-        // console.time('mine')
         newBlock.mine(this.difficulty)
-        // console.timeEnd('mine')
-        // console.log('End mining', newBlock)
         this.chain.push(newBlock)
         return newBlock;
     }
