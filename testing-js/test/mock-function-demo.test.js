@@ -29,10 +29,6 @@ describe('Test applyDiscount func with custom mock function', () => {
 })
 
 describe('Test applyDiscount func with jest mock function', () => {
-    // Create jest mockfunction
-    // const mockFunction = jest.fn()
-    // mockFunction.mockReturnValue(1);
-    // const result = mockFunction();
 
     it('If customer\' points > 10, should apply 10% discount', () => {
         //Change implementation

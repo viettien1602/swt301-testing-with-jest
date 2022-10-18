@@ -2,7 +2,7 @@
 ### In this demo, we wil use a basic blockchain data structure 
 First of all, you can simply understand that blockchain is just a linked list, which contains multiple blocks. Each block has its own hash code and connect to the previous block via that one's hash code.
 *(See image below)*
-![Blockchain-illustration](../images/blockchain-image.jpg)
+![Blockchain-illustration](../../images/blockchain-image.jpg)
 
 **So in JS, we need to build a Block class:**
 ```JS
@@ -179,4 +179,4 @@ it('Changing data and hash of block 1, should return invalid status', () => {
 ```
 
 Let's see the result after these tests: 
-![Result after tests](../images/test-result.jpg)
+![Result after tests](../../images/test-result-data-structure.jpg)
