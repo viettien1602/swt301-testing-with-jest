@@ -35,9 +35,9 @@ This block object has 5 properties:
 * ***data***: containing whatever data you want
 * ***timestamp***: the time that creates this block
 * ***hash***: the code to identify this block, which can be obtained by using SHA256 hashing algorithm from existing crypto-js module (npm i crypto-js) to hash 4 fields: prevHash, data, timestamp and nonce. (we use calculateHash() function to return this hash)
-* ***nonce***: In blockchain, for security purpose, you can not create hash code by anything you want but followinng a **difficulty** level, for example creating a hash that starts with four '0'. So that this **'nonce'** property is an auto-increasing natural number that help change the body of hash function to generate a different hash each time until we obtain the appropriate hash (conducted in mine() function)
+* ***nonce***: In blockchain, for security purpose, you can not create hash code by anything you want but following a **difficulty** level, for example creating a hash that starts with four '0'. So that this **'nonce'** property is an auto-increasing natural number that help change the body of hash function to generate a different hash each time until we obtain the appropriate hash (conducted in mine() function)
 
-**To have a blockchain, we need to build a blockchain class**:
+**To have a blockchain, we need to build a BlockChain class**:
 ```JS
 class BlockChain {
     constructor(difficulty) {
@@ -71,7 +71,7 @@ class BlockChain {
     }
 }
 ```
-To simplify the demo, we will store all the blockchain in an array. The first element of the array, which is the first block, is called genesis block. All other blocks will be added after this block. 
+To simplify the demo, we will store all the blockchain in an array. The first element of the array, which is the first block, is called **genesis block**. All other blocks will be added after this block. 
 In this BlockChain class, we have a function call isValid(), this is for validating all the blockchain, which means that if the data of a specific block was tampered, the status of the whole chain would be false.
 
 That's all for creating a basic blockchain structure, now we add some blocks to the blockchain.
@@ -100,7 +100,7 @@ blockChain.addBlock({
 })
 ```
 
-Now, we will test the blockchain created by these cases after inserting a new block to the blockchain:
+Now, we will test the blockchain which was created in these cases after inserting a new block to the blockchain:
 ```JS
 let data = {
         from: 'Khanh',
@@ -144,7 +144,7 @@ it('A new block added must have data immutable', () => {
     })
 ```
 
-For validation of the blockchain when a block's data has been tampered, we will test with these cases
+For validation of the blockchain when a block's data has been tampered, we will test with these cases:
 1. Not changing anything, should return valid status
 ```JS
 it('Not changing anything, should return valid status', () => {
