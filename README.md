@@ -157,9 +157,9 @@ module.exports = {
 
 ## Pratice: clone my repo [hear](#)
 
-## Snapshot Testing
+### Snapshot Testing
 
-## DOM Testing:
+### DOM Testing:
 
 ### Queries
 
