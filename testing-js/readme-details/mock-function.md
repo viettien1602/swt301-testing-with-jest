@@ -20,7 +20,7 @@ This JS function applyDiscount() needs to call function db.getCustomerSync() whi
 
 **The problem here is that** when applying unit testing, we just need to focus on the code of the function only without any concern about the other service, what if there's some problem when connecting to the database and the test return error (red notification) while the main code of the function face with no bugs ?. That's the reason why with unit testing, we have to create a mock function, which means mock all the operation of the original function to return a particular data to test our main code in the main function.
 
-#### We have two ways to create mock function in our test.
+### We have two ways to create mock function in our test.
 1. **First is conducting a manual mock function by overriding the original one:**
 ```JS
 //We conduct this override function in each test case
