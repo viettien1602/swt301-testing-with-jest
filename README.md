@@ -1,7 +1,12 @@
 # Testing with JEST framework Repository: Team SWT301 FALL 2022
 
 ## Testing JS algorithm using JEST framework
-
+You will find in this session:
+* A simple problem will be solved by Hash algorithm, and we will use JEST to test the accuracy of it
+* Steps to test:
+    1. Using Brute Force algorithm to create test case and correct answer
+    2. Using test case to test Hash algorithm
+    3. See the test result
 
 ## Testing JS data structure (basic blockchain implementation) using JEST framework
 You will find in this session:
